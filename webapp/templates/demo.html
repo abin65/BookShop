@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends 'home.html' %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="margin-top:50px; text-align:center;">Welcome to Demo page </h1>
+<section class="about-section" style="margin: 60px auto; max-width: 1000px; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+
+  <!-- Image Section -->
+  <div class="about-image" style="flex: 1; min-width: 280px; text-align: center;">
+    <img src="{% static 'web/images/the_hobbit.jpg' %}" alt="The Hobbit Book"
+         style="width: 100%; max-width: 400px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+  </div>
+
+  <!-- Text Section -->
+  <div class="about-text" style="flex: 2; min-width: 300px; line-height: 1.8;">
+    <h2 style="margin-bottom: 15px;">Our Story</h2>
+    <p>
+      Welcome to <strong>BookSaw</strong> — your one-stop destination for discovering, reading, and exploring the world of books.
+      Founded with a deep love for literature, BookSaw aims to connect readers with stories that inspire, educate, and entertain.
+    </p>
+
+    <p>
+      We believe that books have the power to change perspectives and spark new ideas.
+      Whether you're a passionate reader, a curious learner, or someone looking for your next great read, BookSaw helps you find exactly what you’re searching for — from timeless classics to the latest bestsellers.
+    </p>
+
+    <h2 style="margin-top: 25px;">Our Mission</h2>
+    <p>
+      Our mission is to make reading more accessible and enjoyable for everyone.
+      Through our curated collections, author highlights, and user-friendly interface,
+      we strive to create a community where book lovers can share recommendations, write reviews, and explore their literary passions.
+    </p>
+
+    <h2 style="margin-top: 25px;">Why Choose BookSaw?</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li>📚 Vast collection of books across all genres</li>
+      <li>🌍 Easy search and advanced filtering options</li>
+      <li>💬 Reader community for reviews and discussions</li>
+      <li>🎯 Personalized recommendations based on your interests</li>
+    </ul>
+  </div>
+
+</section>
+
+
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'index.html'%}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Update category page</h1>
+<div class="card-body">
+  <h4 class="card-title">Add Category</h4>
+  <p class="card-description"> Enter category details below </p>
+  <form class="forms-sample" method="POST" enctype="multipart/form-data" action="{% url 'update_category' cat_id=category.id %}">
+     {% csrf_token %}
+
+    <div class="form-group">
+      <label for="categoryName">Category Name</label>
+      <input type="text" class="form-control" id="categoryName" name="name" placeholder="Enter category name" required value="{{ category.cat_name }}">
+    </div>
+
+    <div class="form-group">
+      <label for="categoryDescription">Description</label>
+      <textarea class="form-control" id="categoryDescription" name="description" rows="4" placeholder="Enter category description" required>{{ category.cat_description }}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="coverImage">Cover Image</label>
+      <img src="{{ category.cat_cover_image.url }}" width="40px" height="40px">
+      <input type="file" class="form-control" id="coverImage" name="cover_image" accept="image/*" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary mr-2" name="submit_category">Update Category</button>
+  </form>
+</div>
+
+</body>
+</html>
+{% endblock %}

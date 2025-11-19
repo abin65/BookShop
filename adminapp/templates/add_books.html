@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Add books details</h1>
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Add New Book</h4>
+    <p class="card-description"> Enter book details below </p>
+    <form class="forms-sample" method="POST" enctype="multipart/form-data" action="{% url 'add_books_data' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="title">Book Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter book title" required>
+      </div>
+
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author" name="author" placeholder="Enter author name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select class="form-control" id="category" name="category" required>
+          {% for i in categories %}
+          <option>{{i.cat_name}}</option>
+          {% endfor %}
+
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price" name="price" placeholder="Enter price" required>
+      </div>
+
+      <div class="form-group">
+        <label for="publisher">Publisher</label>
+        <input type="text" class="form-control" id="publisher" name="publisher" placeholder="Enter publisher name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="4" placeholder="Enter description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="cover_image">Cover Image</label>
+        <input type="file" class="form-control" id="cover_image" name="cover_image" accept="image/*" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary me-2">Submit</button>
+      <button type="reset" class="btn btn-light">Cancel</button>
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>
+{% endblock %}
